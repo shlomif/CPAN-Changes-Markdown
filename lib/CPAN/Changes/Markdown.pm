@@ -21,9 +21,9 @@ use Moo 1.000008;
 
 Mostly, this is wrapper around CPAN::Changes that just formats the output differently.
 
-Primary usecase for me is writing github release notes.
+Primary use case for me is writing C<Github> release notes.
 
-I plan to eventually have hookable filters and stuff to highlight various tokens in a github friendly way.
+I plan to eventually have hook filters and stuff to highlight various tokens in a C<Github> friendly way.
 
 =cut
 
@@ -37,7 +37,7 @@ has changes => (
   builder => sub {
     require CPAN::Changes;
     return CPAN::Changes->new();
-  }
+  },
 );
 
 =method C<load>
@@ -49,17 +49,16 @@ has changes => (
 sub load {
   my ( $self, $path ) = @_;
   require CPAN::Changes;
-  $self->new( changes => CPAN::Changes->load($path) );
+  return $self->new( changes => CPAN::Changes->load($path) );
 }
 
 sub _serialize_release {
-  my $self = shift;
-  my %args = @_;
+  my ( $self, %args )  = @_;
 
   my $release = delete $args{release};
   my @output;
 
-  push @output, sprintf q[## %s], ( join ' ', grep { defined && length } ( $release->version, $release->date, $release->note ) );
+  push @output, sprintf q[## %s], ( join q[ ], grep { defined && length } ( $release->version, $release->date, $release->note ) );
 
   for my $group ( $release->groups( sort => $args{group_sort} ) ) {
     if ( length $group ) {
@@ -80,8 +79,7 @@ sub _serialize_release {
 =cut
 
 sub serialize {
-  my $self = shift;
-  my %args = @_;
+  my ( $self, %args ) = @_;
   my %release_args;
   $release_args{group_sort} = $args{group_sort} if $args{group_sort};
 
