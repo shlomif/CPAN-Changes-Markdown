@@ -53,7 +53,7 @@ sub load {
 }
 
 sub _serialize_release {
-  my ( $self, %args )  = @_;
+  my ( $self, %args ) = @_;
 
   my $release = delete $args{release};
   my @output;
