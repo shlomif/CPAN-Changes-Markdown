@@ -7,6 +7,18 @@ package CPAN::Changes::Markdown;
 
 use Moo 1.000008;
 
+=begin MetaPOD::JSON v1.1.0
+
+{
+    "namespace":"CPAN::Changes::Markdown",
+    "interface":"class",
+    "inherits":"Moo::Object"
+}
+
+=end MetaPOD::JSON
+
+=cut
+
 =head1 SYNOPSIS
 
     use CPAN::Changes::Markdown;
