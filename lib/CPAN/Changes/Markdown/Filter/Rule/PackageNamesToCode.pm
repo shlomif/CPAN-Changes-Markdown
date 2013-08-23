@@ -23,7 +23,11 @@ use CPAN::Changes::Markdown::Filter::NodeUtil qw( mk_node_plaintext mk_node_deli
 
 =head1 SYNOPSIS
 
-This filter translates things that resemble package names (but not simply nouns) into codeblocks.
+    use CPAN::Changes::Markdown::Filter::RuleUtil qw(:all);
+
+    my $instance = rule_PackageNamesToCode( @args );
+
+This filter translates things that resemble package names (but not simply nouns) into code spans.
 
 =over 4
 
@@ -35,25 +39,33 @@ This filter translates things that resemble package names (but not simply nouns)
 
 =item * foo::foo::foo ...etc
 
+=back
+
 =cut
 
-with "CPAN::Changes::Markdown::Role::Filter::Rule::PlainText";
+with 'CPAN::Changes::Markdown::Role::Filter::Rule::PlainText';
 
 my $lc_package_chars = 'a-z0-9';
-my $package_chars    = 'A-Z' . $lc_package_chars;
+my $uc_package_chars = 'A-Z';
+my $package_chars    = $uc_package_chars . $lc_package_chars;
 
-my $re_camelnoun = qr/(\A|\A.*?\s) ( [A-Z][$lc_package_chars]+(?: [A-Z][$package_chars]* )+ ) (\z|\s.*\z)/msx;
-my $re_prefix    = qr/(\A|\A.*?\s) ( ::[$package_chars]+ (?: ::[$package_chars]+)*       ) (\z|\s.*\z)/msx;
-my $re_suffix    = qr/(\A|\A.*?\s) ( (?: [$package_chars]+:: )* [$package_chars]+::      ) (\z|\s.*\z)/msx;
-my $re_infix     = qr/(\A|\A.*?\s) ( [$package_chars]+   (?: ::[$package_chars]+)+       ) (\z|\s.*\z)/msx;
+my $re_camelnoun =
+  qr/(\A|\A.*?\s) ( [$uc_package_chars][$lc_package_chars]+(?: [$uc_package_chars][$package_chars]* )+ ) (\z|\s.*\z)/msx;
+my $re_prefix = qr/(\A|\A.*?\s) ( ::[$package_chars]+ (?: ::[$package_chars]+)*       ) (\z|\s.*\z)/msx;
+my $re_suffix = qr/(\A|\A.*?\s) ( (?: [$package_chars]+:: )* [$package_chars]+::      ) (\z|\s.*\z)/msx;
+my $re_infix  = qr/(\A|\A.*?\s) ( [$package_chars]+   (?: ::[$package_chars]+)+       ) (\z|\s.*\z)/msx;
 
 sub _inject_code_delim {
   my ( $self, $out, $before, $code, $after ) = @_;
   push @{$out}, mk_node_plaintext($before);
-  push @{$out}, mk_node_delimitedtext( '`', $code, '`' );
+  push @{$out}, mk_node_delimitedtext( q{`}, $code, q{`} );
   push @{$out}, $self->filter_plaintext( mk_node_plaintext($after) );
   return @{$out};
 }
+
+=method C<filter_plaintext>
+
+=cut
 
 sub filter_plaintext {
   my ( $self, $input ) = @_;

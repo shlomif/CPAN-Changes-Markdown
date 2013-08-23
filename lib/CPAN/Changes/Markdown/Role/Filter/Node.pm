@@ -3,7 +3,13 @@ use warnings;
 
 package CPAN::Changes::Markdown::Role::Filter::Node;
 
+# ABSTRACT: A parse node of some kind
+
 use Role::Tiny;
+
+=requires C<to_s>
+
+=cut
 
 requires 'to_s';
 

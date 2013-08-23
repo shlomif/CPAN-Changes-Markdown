@@ -3,11 +3,31 @@ use warnings;
 
 package CPAN::Changes::Markdown::Role::Filter::Rule::PlainText;
 
-# ABSTRACT: A rule that only filters plaintext nodes.
+# ABSTRACT: A rule that only filters C<plaintext> nodes.
+
+=head1 SYNOPSIS
+
+    package Example::Rule;
+
+    use Role::Tiny::With;
+
+    with 'CPAN::Changes::Markdown::Role::Filter::Rule::PlainText';
+
+    sub filter_plaintext {
+        my ( $self, @nodes ) = @_;
+        return ( @nodes );
+    }
+
+=cut
 
 use Role::Tiny;
 
+=requires C<filter_plaintext>
+
+=cut
+
 requires 'filter_plaintext';
+
 with 'CPAN::Changes::Markdown::Role::Filter::Rule';
 
 =begin MetaPOD::JSON v1.1.0
@@ -19,6 +39,10 @@ with 'CPAN::Changes::Markdown::Role::Filter::Rule';
 }
 
 =end MetaPOD::JSON
+
+=cut
+
+=method C<filter>
 
 =cut
 

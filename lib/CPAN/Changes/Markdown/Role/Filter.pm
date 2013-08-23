@@ -3,6 +3,8 @@ use warnings;
 
 package CPAN::Changes::Markdown::Role::Filter;
 
+# ABSTRACT: A text filter of some kind
+
 =begin MetaPOD::JSON v1.1.0
 
 {
@@ -16,6 +18,10 @@ package CPAN::Changes::Markdown::Role::Filter;
 =cut
 
 use Role::Tiny;
+
+=requires C<process>
+
+=cut
 
 requires 'process';
 

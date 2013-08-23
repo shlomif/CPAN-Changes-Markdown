@@ -23,11 +23,15 @@ use CPAN::Changes::Markdown::Filter::NodeUtil qw( mk_node_plaintext mk_node_deli
 
 =head1 SYNOPSIS
 
-This filter translates things with _ as part of their token to codeblocks.
+    use CPAN::Changes::Markdown::Filter::RuleUtil qw(:all);
+
+    my $instance = rule_UnderscoredToCode( @args );
+
+This filter translates things with _ as part of their token to code spans.
 
 =cut
 
-with "CPAN::Changes::Markdown::Role::Filter::Rule::PlainText";
+with 'CPAN::Changes::Markdown::Role::Filter::Rule::PlainText';
 
 my $re_prefix = qr/(\A|\A.*?\s) ( _+ [^_\s]+         (?: _+ [^_\s]+ )*   ) (\z|\s.*\z)/msx;
 my $re_suffix = qr/(\A|\A.*?\s) ( [^_\s]+ _+         (?: [^_\s]+ _+ )*   ) (\z|\s.*\z)/msx;
@@ -36,10 +40,14 @@ my $re_infix  = qr/(\A|\A.*?\s) ( [^_\s]+ _+ [^_\s]+ (?: _+ [^_\s]+ )*   ) (\z|\
 sub _inject_code_delim {
   my ( $self, $out, $before, $code, $after ) = @_;
   push @{$out}, mk_node_plaintext($before);
-  push @{$out}, mk_node_delimitedtext( '`', $code, '`' );
+  push @{$out}, mk_node_delimitedtext( q{`}, $code, q{`} );
   push @{$out}, $self->filter_plaintext( mk_node_plaintext($after) );
   return @{$out};
 }
+
+=method C<filter_plaintext>
+
+=cut
 
 sub filter_plaintext {
   my ( $self, $input ) = @_;

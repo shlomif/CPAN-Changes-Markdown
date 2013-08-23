@@ -3,6 +3,16 @@ use warnings;
 
 package CPAN::Changes::Markdown::Filter::Passthrough;
 
+# ABSTRACT: A Filter drop-in that doesn't process anything.
+
+=head1 SYNOPSIS
+
+    my $filter = CPAN::Changes::Markdown::Filter::Passthrough->new();
+    my $output = $filter->process( $input );
+    # $output == $input
+
+=cut
+
 =begin MetaPOD::JSON v1.1.0
 
 {
@@ -19,6 +29,12 @@ package CPAN::Changes::Markdown::Filter::Passthrough;
 use Moo;
 
 with 'CPAN::Changes::Markdown::Role::Filter';
+
+=method C<process>
+
+=cut
+
+## no critic (RequireArgUnpacking)
 
 sub process {
   return $_[1];

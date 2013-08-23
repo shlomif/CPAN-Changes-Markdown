@@ -24,7 +24,7 @@ use CPAN::Changes::Markdown::Filter::RuleUtil qw(:all);
 
     use CPAN::Changes::Markdown;
 
-    my $changes = CPAN::Changes::Markdown->load( $path_to_changes_file );
+    my $changes = CPAN::Changes::Markdown->load_utf8( $path_to_changes_file );
 
     print $changes->serialize # emits Markdown
 
@@ -52,14 +52,28 @@ has changes => (
     return CPAN::Changes->new();
   },
 );
+
+=attr C<header_filter>
+
+A CPAN::Changes::Markdown::Filter object that can process a header.
+
+=cut
+
 has header_filter => (
   is      => ro =>,
   lazy    => 1,
   builder => sub {
     require CPAN::Changes::Markdown::Filter;
     return CPAN::Changes::Markdown::Filter->new( rules => [ rule_VersionsToCode, rule_UnderscoredToCode ] );
-  }
+  },
 );
+
+=attr C<header_filter>
+
+A CPAN::Changes::Markdown::Filter object that can process a header.
+
+=cut
+
 has line_filter => (
   is      => ro =>,
   lazy    => 1,
@@ -67,7 +81,7 @@ has line_filter => (
     require CPAN::Changes::Markdown::Filter;
     return CPAN::Changes::Markdown::Filter->new(
       rules => [ rule_VersionsToCode, rule_UnderscoredToCode, rule_PackageNamesToCode ] );
-  }
+  },
 );
 
 =method C<load>
@@ -82,11 +96,25 @@ sub load {
   return $self->new( changes => CPAN::Changes->load($path) );
 }
 
+=method C<load_string>
+
+    my $ccm = CPAN::Changes::Markdown->load_string( "some text" );
+
+=cut
+
 sub load_string {
   my ( $self, $string ) = @_;
   require CPAN::Changes;
   return $self->new( changes => CPAN::Changes->load_string($string) );
 }
+
+=method C<load_utf8>
+
+Same as C<load> except opens C<file> in C<utf8> mode.
+
+    my $ccm = CPAN::Changes::Markdown->load_utf8( path/to/file  );
+
+=cut
 
 sub load_utf8 {
   my ( $self, $path ) = @_;

@@ -10,7 +10,7 @@ version 0.2.0
 
     use CPAN::Changes::Markdown;
 
-    my $changes = CPAN::Changes::Markdown->load( $path_to_changes_file );
+    my $changes = CPAN::Changes::Markdown->load_utf8( $path_to_changes_file );
 
     print $changes->serialize # emits Markdown
 
@@ -28,6 +28,16 @@ I plan to eventually have hook filters and stuff to highlight various tokens in 
 
     my $ccm = CPAN::Changes::Markdown->load( path/to/file );
 
+## `load_string`
+
+    my $ccm = CPAN::Changes::Markdown->load_string( "some text" );
+
+## `load_utf8`
+
+Same as `load` except opens `file` in `utf8` mode.
+
+    my $ccm = CPAN::Changes::Markdown->load_utf8( path/to/file  );
+
 ## `serialize`
 
     my $string = $ccm->serialize();
@@ -35,6 +45,14 @@ I plan to eventually have hook filters and stuff to highlight various tokens in 
 # ATTRIBUTES
 
 ## `changes`
+
+## `header_filter`
+
+A CPAN::Changes::Markdown::Filter object that can process a header.
+
+## `header_filter`
+
+A CPAN::Changes::Markdown::Filter object that can process a header.
 
 {
     "namespace":"CPAN::Changes::Markdown",
