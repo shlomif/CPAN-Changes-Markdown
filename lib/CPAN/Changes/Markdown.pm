@@ -64,6 +64,19 @@ sub load {
   return $self->new( changes => CPAN::Changes->load($path) );
 }
 
+sub load_string {
+  my ( $self, $string ) = @_;
+  require CPAN::Changes;
+  return $self->new( changes => CPAN::Changes->load_string($string) );
+}
+
+sub load_utf8 {
+  my ( $self, $path ) = @_;
+  require Path::Tiny;
+  require CPAN::Changes;
+  return $self->new( changes => CPAN::Changes->load_string( Path::Tiny::path($path)->slurp_utf8 ) );
+}
+
 sub _serialize_release {
   my ( $self, %args ) = @_;
 
