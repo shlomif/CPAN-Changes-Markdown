@@ -33,7 +33,7 @@ This filter translates things that resemble package names (but not simply nouns)
 
 =item * foo::foo
 
-=item * foo::foo::foo ...etc 
+=item * foo::foo::foo ...etc
 
 =cut
 

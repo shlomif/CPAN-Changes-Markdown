@@ -1,6 +1,6 @@
 use strict;
 use warnings;
- 
+
 package CPAN::Changes::Markdown::Role::Filter::Node;
 
 use Role::Tiny;

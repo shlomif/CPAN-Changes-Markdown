@@ -1,6 +1,6 @@
 use strict;
 use warnings;
- 
+
 package CPAN::Changes::Markdown::Filter::Passthrough;
 
 =begin MetaPOD::JSON v1.1.0
@@ -21,7 +21,7 @@ use Moo;
 with 'CPAN::Changes::Markdown::Role::Filter';
 
 sub process {
-    return $_[1];
+  return $_[1];
 }
 
 1;

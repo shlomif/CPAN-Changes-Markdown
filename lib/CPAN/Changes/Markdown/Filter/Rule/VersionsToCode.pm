@@ -30,6 +30,7 @@ sub _inject_code_delim {
   push @{$out}, $self->filter_plaintext( mk_node_plaintext($after) );
   return @{$out};
 }
+
 sub filter_plaintext {
   my ( $self, $input ) = @_;
   my @output;

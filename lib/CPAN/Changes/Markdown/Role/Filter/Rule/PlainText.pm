@@ -1,6 +1,6 @@
 use strict;
 use warnings;
- 
+
 package CPAN::Changes::Markdown::Role::Filter::Rule::PlainText;
 
 # ABSTRACT: A rule that only filters plaintext nodes.
@@ -26,12 +26,12 @@ with 'CPAN::Changes::Markdown::Role::Filter::Rule';
 sub filter {
   my ( $self, @input ) = @_;
   my @output;
-  for my $input ( @input ) {
-      if ( not $input->isa('CPAN::Changes::Markdown::Filter::Node::PlainText' ) ) {
-          push @output, $input;
-          next;
-      }
-      push @output, $self->filter_plaintext( $input );
+  for my $input (@input) {
+    if ( not $input->isa('CPAN::Changes::Markdown::Filter::Node::PlainText') ) {
+      push @output, $input;
+      next;
+    }
+    push @output, $self->filter_plaintext($input);
   }
   return @output;
 }

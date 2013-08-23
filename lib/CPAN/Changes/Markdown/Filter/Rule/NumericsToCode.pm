@@ -24,20 +24,19 @@ use CPAN::Changes::Markdown::Filter::NodeUtil qw( mk_node_plaintext mk_node_deli
 with "CPAN::Changes::Markdown::Role::Filter::Rule::PlainText";
 
 sub _inject_code_delim {
-    my ( $self, $out, $before, $code, $after ) = @_;
-    push @{$out}, mk_node_plaintext($before);
-    push @{$out}, mk_node_delimitedtext(  '`', $code,  '`' );
-    push @{$out}, $self->filter_plaintext( mk_node_plaintext($after) );
-    return @{$out};
+  my ( $self, $out, $before, $code, $after ) = @_;
+  push @{$out}, mk_node_plaintext($before);
+  push @{$out}, mk_node_delimitedtext( '`', $code, '`' );
+  push @{$out}, $self->filter_plaintext( mk_node_plaintext($after) );
+  return @{$out};
 }
-
 
 sub filter_plaintext {
   my ( $self, $input ) = @_;
   my @output;
   if ( $input->content !~ /\d/ ) {
     return $input;
-}
+  }
 
   if ( $input->content =~ /(\A|\A.*?\s)([\d._]+)(\z|\s.*\z)/ms ) {
     return $self->_inject_code_delim( [], $1, $2, $3 );

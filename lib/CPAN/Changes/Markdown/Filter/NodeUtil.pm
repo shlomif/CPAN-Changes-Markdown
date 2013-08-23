@@ -15,18 +15,16 @@ package CPAN::Changes::Markdown::Filter::NodeUtil;
 
 =cut
 
-use Sub::Exporter::Progressive -setup => {
-    exports => [ qw( mk_node_plaintext mk_node_delimitedtext ) ]
-};
+use Sub::Exporter::Progressive -setup => { exports => [qw( mk_node_plaintext mk_node_delimitedtext )] };
 
 sub mk_node_plaintext {
-    require CPAN::Changes::Markdown::Filter::Node::PlainText;
-    return CPAN::Changes::Markdown::Filter::Node::PlainText->create(@_);
+  require CPAN::Changes::Markdown::Filter::Node::PlainText;
+  return CPAN::Changes::Markdown::Filter::Node::PlainText->create(@_);
 }
 
 sub mk_node_delimitedtext {
-    require CPAN::Changes::Markdown::Filter::Node::DelimitedText;
-    return CPAN::Changes::Markdown::Filter::Node::DelimitedText->create(@_);
+  require CPAN::Changes::Markdown::Filter::Node::DelimitedText;
+  return CPAN::Changes::Markdown::Filter::Node::DelimitedText->create(@_);
 }
 
 1;
