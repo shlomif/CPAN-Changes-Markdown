@@ -6,6 +6,7 @@ package CPAN::Changes::Markdown;
 # ABSTRACT: Format your Changes file ( or a section of it ) in Markdown
 
 use Moo 1.000008;
+use CPAN::Changes::Markdown::Filter::RuleUtil qw(:all);
 
 =begin MetaPOD::JSON v1.1.0
 
@@ -51,6 +52,23 @@ has changes => (
     return CPAN::Changes->new();
   },
 );
+has header_filter => (
+  is      => ro =>,
+  lazy    => 1,
+  builder => sub {
+    require CPAN::Changes::Markdown::Filter;
+    return CPAN::Changes::Markdown::Filter->new( rules => [ rule_VersionsToCode, rule_UnderscoredToCode ] );
+  }
+);
+has line_filter => (
+  is      => ro =>,
+  lazy    => 1,
+  builder => sub {
+    require CPAN::Changes::Markdown::Filter;
+    return CPAN::Changes::Markdown::Filter->new(
+      rules => [ rule_VersionsToCode, rule_UnderscoredToCode, rule_PackageNamesToCode ] );
+  }
+);
 
 =method C<load>
 
@@ -87,10 +105,10 @@ sub _serialize_release {
 
   for my $group ( $release->groups( sort => $args{group_sort} ) ) {
     if ( length $group ) {
-      push @output, sprintf q[### %s], $group;
+      push @output, sprintf q[### %s], $self->header_filter->process($group);
     }
     for my $line ( @{ $release->changes($group) } ) {
-      push @output, ' - ' . $line;
+      push @output, ' - ' . $self->line_filter->process($line);
     }
     push @output, q[];
   }
