@@ -3,12 +3,12 @@ NAME
     ) in Markdown
 
 VERSION
-    version 0.1.0
+    version 0.2.0
 
 SYNOPSIS
         use CPAN::Changes::Markdown;
 
-        my $changes = CPAN::Changes::Markdown->load( $path_to_changes_file );
+        my $changes = CPAN::Changes::Markdown->load_utf8( $path_to_changes_file );
 
         print $changes->serialize # emits Markdown
 
@@ -25,11 +25,25 @@ METHODS
   "load"
         my $ccm = CPAN::Changes::Markdown->load( path/to/file );
 
+  "load_string"
+        my $ccm = CPAN::Changes::Markdown->load_string( "some text" );
+
+  "load_utf8"
+    Same as "load" except opens "file" in "utf8" mode.
+
+        my $ccm = CPAN::Changes::Markdown->load_utf8( path/to/file  );
+
   "serialize"
         my $string = $ccm->serialize();
 
 ATTRIBUTES
   "changes"
+  "header_filter"
+    A CPAN::Changes::Markdown::Filter object that can process a header.
+
+  "header_filter"
+    A CPAN::Changes::Markdown::Filter object that can process a header.
+
 AUTHOR
     Kent Fredric <kentfredric@gmail.com>
 

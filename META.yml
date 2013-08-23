@@ -7,6 +7,7 @@ build_requires:
   Module::Build: 0.4007
   Test::More: 0.98
   blib: 0
+  utf8: 0
 configure_requires:
   Module::Build: 0.4007
 dynamic_config: 0
@@ -19,10 +20,55 @@ name: CPAN-Changes-Markdown
 provides:
   CPAN::Changes::Markdown:
     file: lib/CPAN/Changes/Markdown.pm
-    version: v0.1.0
+    version: v0.2.0
+  CPAN::Changes::Markdown::Filter:
+    file: lib/CPAN/Changes/Markdown/Filter.pm
+    version: v0.2.0
+  CPAN::Changes::Markdown::Filter::Node::DelimitedText:
+    file: lib/CPAN/Changes/Markdown/Filter/Node/DelimitedText.pm
+    version: v0.2.0
+  CPAN::Changes::Markdown::Filter::Node::PlainText:
+    file: lib/CPAN/Changes/Markdown/Filter/Node/PlainText.pm
+    version: v0.2.0
+  CPAN::Changes::Markdown::Filter::NodeUtil:
+    file: lib/CPAN/Changes/Markdown/Filter/NodeUtil.pm
+    version: v0.2.0
+  CPAN::Changes::Markdown::Filter::Passthrough:
+    file: lib/CPAN/Changes/Markdown/Filter/Passthrough.pm
+    version: v0.2.0
+  CPAN::Changes::Markdown::Filter::Rule::NumericsToCode:
+    file: lib/CPAN/Changes/Markdown/Filter/Rule/NumericsToCode.pm
+    version: v0.2.0
+  CPAN::Changes::Markdown::Filter::Rule::PackageNamesToCode:
+    file: lib/CPAN/Changes/Markdown/Filter/Rule/PackageNamesToCode.pm
+    version: v0.2.0
+  CPAN::Changes::Markdown::Filter::Rule::UnderscoredToCode:
+    file: lib/CPAN/Changes/Markdown/Filter/Rule/UnderscoredToCode.pm
+    version: v0.2.0
+  CPAN::Changes::Markdown::Filter::Rule::VersionsToCode:
+    file: lib/CPAN/Changes/Markdown/Filter/Rule/VersionsToCode.pm
+    version: v0.2.0
+  CPAN::Changes::Markdown::Filter::RuleUtil:
+    file: lib/CPAN/Changes/Markdown/Filter/RuleUtil.pm
+    version: v0.2.0
+  CPAN::Changes::Markdown::Role::Filter:
+    file: lib/CPAN/Changes/Markdown/Role/Filter.pm
+    version: v0.2.0
+  CPAN::Changes::Markdown::Role::Filter::Node:
+    file: lib/CPAN/Changes/Markdown/Role/Filter/Node.pm
+    version: v0.2.0
+  CPAN::Changes::Markdown::Role::Filter::Rule:
+    file: lib/CPAN/Changes/Markdown/Role/Filter/Rule.pm
+    version: v0.2.0
+  CPAN::Changes::Markdown::Role::Filter::Rule::PlainText:
+    file: lib/CPAN/Changes/Markdown/Role/Filter/Rule/PlainText.pm
+    version: v0.2.0
 requires:
   CPAN::Changes: 0
   Moo: 1.000008
+  Path::Tiny: 0
+  Role::Tiny: 0
+  Sub::Exporter::Progressive: 0
   perl: v5.10.0
   strict: 0
   warnings: 0
@@ -30,25 +76,30 @@ resources:
   bugtracker: https://github.com/kentfredric/CPAN-Changes-Markdown/issues
   homepage: https://github.com/kentfredric/CPAN-Changes-Markdown
   repository: https://github.com/kentfredric/CPAN-Changes-Markdown.git
-version: 0.1.0
+version: 0.2.0
 x_BuiltWith:
   modules:
-    CPAN::Changes: 0.22
+    CPAN::Changes: 0.23
     Capture::Tiny: 0.22
-    Dist::Zilla::PluginBundle::Author::KENTNL: 1.8.0
+    Dist::Zilla::PluginBundle::Author::KENTNL: 1.8.1
     Dist::Zilla::PluginBundle::Author::KENTNL::Lite: 'NA(possibly not installed)'
     Module::Build: 0.4007
     Moo: 1.003
+    Path::Tiny: 0.030
     Pod::Coverage::TrustPod: 0.100002
-    Test::CPAN::Changes: 0.22
+    Role::Tiny: 1.003001
+    Sub::Exporter::Progressive: 0.001010
+    Test::CPAN::Changes: 0.23
     Test::CPAN::Meta: 0.23
+    Test::Kwalitee: 1.13
     Test::More: 0.98
     Test::Pod: 1.48
     Test::Pod::Coverage: 1.08
     blib: 1.06
     perl: 'NA(skipped: perl)'
     strict: 1.07
-    version: 0.9902
+    utf8: 1.10
+    version: 0.9903
     warnings: 1.18
   perl:
     original: v5.18.0
@@ -139,7 +190,7 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::Test::Kwalitee
       name: '@Author::KENTNL/Test::Kwalitee'
-      version: 2.03
+      version: 2.06
     -
       class: Dist::Zilla::Plugin::EOLTests
       name: '@Author::KENTNL/EOLTests'
@@ -213,7 +264,7 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl
       name: '@Author::KENTNL/Author::KENTNL::MinimumPerl'
-      version: 1.8.0
+      version: 1.8.1
     -
       class: Dist::Zilla::Plugin::Authority
       name: '@Author::KENTNL/Authority'

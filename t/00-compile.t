@@ -11,6 +11,20 @@ use Capture::Tiny qw{ capture };
 
 my @module_files = qw(
 CPAN/Changes/Markdown.pm
+CPAN/Changes/Markdown/Filter.pm
+CPAN/Changes/Markdown/Filter/Node/DelimitedText.pm
+CPAN/Changes/Markdown/Filter/Node/PlainText.pm
+CPAN/Changes/Markdown/Filter/NodeUtil.pm
+CPAN/Changes/Markdown/Filter/Passthrough.pm
+CPAN/Changes/Markdown/Filter/Rule/NumericsToCode.pm
+CPAN/Changes/Markdown/Filter/Rule/PackageNamesToCode.pm
+CPAN/Changes/Markdown/Filter/Rule/UnderscoredToCode.pm
+CPAN/Changes/Markdown/Filter/Rule/VersionsToCode.pm
+CPAN/Changes/Markdown/Filter/RuleUtil.pm
+CPAN/Changes/Markdown/Role/Filter.pm
+CPAN/Changes/Markdown/Role/Filter/Node.pm
+CPAN/Changes/Markdown/Role/Filter/Rule.pm
+CPAN/Changes/Markdown/Role/Filter/Rule/PlainText.pm
 );
 
 my @scripts = qw(

@@ -6,12 +6,14 @@ BEGIN {
   $CPAN::Changes::Markdown::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $CPAN::Changes::Markdown::VERSION = '0.1.0';
+  $CPAN::Changes::Markdown::VERSION = '0.2.0';
 }
 
 # ABSTRACT: Format your Changes file ( or a section of it ) in Markdown
 
 use Moo 1.000008;
+use CPAN::Changes::Markdown::Filter::RuleUtil qw(:all);
+
 
 
 
@@ -26,10 +28,46 @@ has changes => (
 );
 
 
+has header_filter => (
+  is      => ro =>,
+  lazy    => 1,
+  builder => sub {
+    require CPAN::Changes::Markdown::Filter;
+    return CPAN::Changes::Markdown::Filter->new( rules => [ rule_VersionsToCode, rule_UnderscoredToCode ] );
+  },
+);
+
+
+has line_filter => (
+  is      => ro =>,
+  lazy    => 1,
+  builder => sub {
+    require CPAN::Changes::Markdown::Filter;
+    return CPAN::Changes::Markdown::Filter->new(
+      rules => [ rule_VersionsToCode, rule_UnderscoredToCode, rule_PackageNamesToCode ] );
+  },
+);
+
+
 sub load {
   my ( $self, $path ) = @_;
   require CPAN::Changes;
   return $self->new( changes => CPAN::Changes->load($path) );
+}
+
+
+sub load_string {
+  my ( $self, $string ) = @_;
+  require CPAN::Changes;
+  return $self->new( changes => CPAN::Changes->load_string($string) );
+}
+
+
+sub load_utf8 {
+  my ( $self, $path ) = @_;
+  require Path::Tiny;
+  require CPAN::Changes;
+  return $self->new( changes => CPAN::Changes->load_string( Path::Tiny::path($path)->slurp_utf8 ) );
 }
 
 sub _serialize_release {
@@ -42,10 +80,10 @@ sub _serialize_release {
 
   for my $group ( $release->groups( sort => $args{group_sort} ) ) {
     if ( length $group ) {
-      push @output, sprintf q[### %s], $group;
+      push @output, sprintf q[### %s], $self->header_filter->process($group);
     }
     for my $line ( @{ $release->changes($group) } ) {
-      push @output, ' - ' . $line;
+      push @output, ' - ' . $self->line_filter->process($line);
     }
     push @output, q[];
   }
@@ -89,13 +127,13 @@ CPAN::Changes::Markdown - Format your Changes file ( or a section of it ) in Mar
 
 =head1 VERSION
 
-version 0.1.0
+version 0.2.0
 
 =head1 SYNOPSIS
 
     use CPAN::Changes::Markdown;
 
-    my $changes = CPAN::Changes::Markdown->load( $path_to_changes_file );
+    my $changes = CPAN::Changes::Markdown->load_utf8( $path_to_changes_file );
 
     print $changes->serialize # emits Markdown
 
@@ -113,6 +151,16 @@ I plan to eventually have hook filters and stuff to highlight various tokens in 
 
     my $ccm = CPAN::Changes::Markdown->load( path/to/file );
 
+=head2 C<load_string>
+
+    my $ccm = CPAN::Changes::Markdown->load_string( "some text" );
+
+=head2 C<load_utf8>
+
+Same as C<load> except opens C<file> in C<utf8> mode.
+
+    my $ccm = CPAN::Changes::Markdown->load_utf8( path/to/file  );
+
 =head2 C<serialize>
 
     my $string = $ccm->serialize();
@@ -120,6 +168,25 @@ I plan to eventually have hook filters and stuff to highlight various tokens in 
 =head1 ATTRIBUTES
 
 =head2 C<changes>
+
+=head2 C<header_filter>
+
+A CPAN::Changes::Markdown::Filter object that can process a header.
+
+=head2 C<header_filter>
+
+A CPAN::Changes::Markdown::Filter object that can process a header.
+
+=begin MetaPOD::JSON v1.1.0
+
+{
+    "namespace":"CPAN::Changes::Markdown",
+    "interface":"class",
+    "inherits":"Moo::Object"
+}
+
+
+=end MetaPOD::JSON
 
 =head1 AUTHOR
 
