@@ -1,6 +1,22 @@
 Release history for CPAN-Changes-Markdown
 
 {{$NEXT}}
+ [!Major]
+ - Now filters headers/change lines optimisitically.
+
+ [Dependencies::Added / develop requires]
+ - Test::Kwalitee 1.08
+
+ [Dependencies::Added / runtime requires]
+ - Path::Tiny
+ - Role::Tiny
+ - Sub::Exporter::Progressive
+
+ [Dependencies::Added / test requires]
+ - utf8
+
+ [Dependencies::Changed / develop suggests]
+ - Dist::Zilla::PluginBundle::Author::KENTNL v1.8.0 → v1.8.1
 
 0.1.0 2013-08-09T23:57:02Z
  - First version.
