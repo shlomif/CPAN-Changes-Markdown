@@ -4,7 +4,7 @@ CPAN::Changes::Markdown - Format your Changes file ( or a section of it ) in Mar
 
 # VERSION
 
-version 0.1.0
+version 0.2.0
 
 # SYNOPSIS
 
@@ -35,6 +35,14 @@ I plan to eventually have hook filters and stuff to highlight various tokens in 
 # ATTRIBUTES
 
 ## `changes`
+
+{
+    "namespace":"CPAN::Changes::Markdown",
+    "interface":"class",
+    "inherits":"Moo::Object"
+}
+
+
 
 # AUTHOR
 
