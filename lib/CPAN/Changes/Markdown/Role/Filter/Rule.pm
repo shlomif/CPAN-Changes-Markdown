@@ -6,7 +6,7 @@ BEGIN {
   $CPAN::Changes::Markdown::Role::Filter::Rule::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $CPAN::Changes::Markdown::Role::Filter::Rule::VERSION = '0.2.0';
+  $CPAN::Changes::Markdown::Role::Filter::Rule::VERSION = '0.2.1';
 }
 
 # ABSTRACT: A step filter
@@ -31,7 +31,7 @@ CPAN::Changes::Markdown::Role::Filter::Rule - A step filter
 
 =head1 VERSION
 
-version 0.2.0
+version 0.2.1
 
 =head1 ROLE REQUIRES
 

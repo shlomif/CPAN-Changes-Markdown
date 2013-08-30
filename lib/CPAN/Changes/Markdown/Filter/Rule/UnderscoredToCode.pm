@@ -6,7 +6,7 @@ BEGIN {
   $CPAN::Changes::Markdown::Filter::Rule::UnderscoredToCode::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $CPAN::Changes::Markdown::Filter::Rule::UnderscoredToCode::VERSION = '0.2.0';
+  $CPAN::Changes::Markdown::Filter::Rule::UnderscoredToCode::VERSION = '0.2.1';
 }
 
 # ABSTRACT: Quote things containing an underscore as Code
@@ -59,7 +59,7 @@ CPAN::Changes::Markdown::Filter::Rule::UnderscoredToCode - Quote things containi
 
 =head1 VERSION
 
-version 0.2.0
+version 0.2.1
 
 =head1 SYNOPSIS
 

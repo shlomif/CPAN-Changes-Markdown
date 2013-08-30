@@ -6,7 +6,7 @@ BEGIN {
   $CPAN::Changes::Markdown::Filter::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $CPAN::Changes::Markdown::Filter::VERSION = '0.2.0';
+  $CPAN::Changes::Markdown::Filter::VERSION = '0.2.1';
 }
 
 # ABSTRACT: a simple plug-in based, staged text filter for Markdown translation
@@ -51,7 +51,7 @@ CPAN::Changes::Markdown::Filter - a simple plug-in based, staged text filter for
 
 =head1 VERSION
 
-version 0.2.0
+version 0.2.1
 
 =head1 SYNOPSIS
 

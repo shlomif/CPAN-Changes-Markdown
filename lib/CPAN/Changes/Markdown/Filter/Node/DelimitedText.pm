@@ -7,7 +7,7 @@ BEGIN {
   $CPAN::Changes::Markdown::Filter::Node::DelimitedText::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $CPAN::Changes::Markdown::Filter::Node::DelimitedText::VERSION = '0.2.0';
+  $CPAN::Changes::Markdown::Filter::Node::DelimitedText::VERSION = '0.2.1';
 }
 
 # ABSTRACT: A region of text that is marked up
@@ -56,7 +56,7 @@ CPAN::Changes::Markdown::Filter::Node::DelimitedText - A region of text that is 
 
 =head1 VERSION
 
-version 0.2.0
+version 0.2.1
 
 =head1 SYNOPSIS
 

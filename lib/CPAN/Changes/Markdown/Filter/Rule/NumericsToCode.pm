@@ -6,7 +6,7 @@ BEGIN {
   $CPAN::Changes::Markdown::Filter::Rule::NumericsToCode::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $CPAN::Changes::Markdown::Filter::Rule::NumericsToCode::VERSION = '0.2.0';
+  $CPAN::Changes::Markdown::Filter::Rule::NumericsToCode::VERSION = '0.2.1';
 }
 
 # ABSTRACT: Quote things that look like numbers as code entries.
@@ -55,7 +55,7 @@ CPAN::Changes::Markdown::Filter::Rule::NumericsToCode - Quote things that look l
 
 =head1 VERSION
 
-version 0.2.0
+version 0.2.1
 
 =head1 SYNOPSIS
 

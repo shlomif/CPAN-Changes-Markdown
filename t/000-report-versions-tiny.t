@@ -49,9 +49,10 @@ sub pmver {
 }
 
 eval { $v .= pmver('CPAN::Changes','any version') };
-eval { $v .= pmver('Capture::Tiny','any version') };
 eval { $v .= pmver('Dist::Zilla::PluginBundle::Author::KENTNL','v1.8.1') };
 eval { $v .= pmver('Dist::Zilla::PluginBundle::Author::KENTNL::Lite','v1.3.0') };
+eval { $v .= pmver('IO::Handle','any version') };
+eval { $v .= pmver('IPC::Open3','any version') };
 eval { $v .= pmver('Module::Build','0.4007') };
 eval { $v .= pmver('Moo','1.000008') };
 eval { $v .= pmver('Path::Tiny','any version') };
@@ -64,7 +65,6 @@ eval { $v .= pmver('Test::Kwalitee','1.08') };
 eval { $v .= pmver('Test::More','0.98') };
 eval { $v .= pmver('Test::Pod','1.41') };
 eval { $v .= pmver('Test::Pod::Coverage','1.08') };
-eval { $v .= pmver('blib','any version') };
 eval { $v .= pmver('strict','any version') };
 eval { $v .= pmver('utf8','any version') };
 eval { $v .= pmver('version','0.9901') };

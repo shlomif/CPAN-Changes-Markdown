@@ -6,7 +6,7 @@ BEGIN {
   $CPAN::Changes::Markdown::Filter::Rule::PackageNamesToCode::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $CPAN::Changes::Markdown::Filter::Rule::PackageNamesToCode::VERSION = '0.2.0';
+  $CPAN::Changes::Markdown::Filter::Rule::PackageNamesToCode::VERSION = '0.2.1';
 }
 
 # ABSTRACT: Quote things that look like Perl Package names to Code
@@ -68,7 +68,7 @@ CPAN::Changes::Markdown::Filter::Rule::PackageNamesToCode - Quote things that lo
 
 =head1 VERSION
 
-version 0.2.0
+version 0.2.1
 
 =head1 SYNOPSIS
 

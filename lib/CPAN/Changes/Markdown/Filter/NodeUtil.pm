@@ -7,7 +7,7 @@ BEGIN {
   $CPAN::Changes::Markdown::Filter::NodeUtil::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $CPAN::Changes::Markdown::Filter::NodeUtil::VERSION = '0.2.0';
+  $CPAN::Changes::Markdown::Filter::NodeUtil::VERSION = '0.2.1';
 }
 
 # ABSTRACT: short-hand node construction functions
@@ -44,7 +44,7 @@ CPAN::Changes::Markdown::Filter::NodeUtil - short-hand node construction functio
 
 =head1 VERSION
 
-version 0.2.0
+version 0.2.1
 
 =head1 SYNOPSIS
 

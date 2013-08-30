@@ -7,7 +7,7 @@ BEGIN {
   $CPAN::Changes::Markdown::Filter::RuleUtil::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $CPAN::Changes::Markdown::Filter::RuleUtil::VERSION = '0.2.0';
+  $CPAN::Changes::Markdown::Filter::RuleUtil::VERSION = '0.2.1';
 }
 
 # ABSTRACT: short-hand for constructing rule objects.
@@ -57,7 +57,7 @@ CPAN::Changes::Markdown::Filter::RuleUtil - short-hand for constructing rule obj
 
 =head1 VERSION
 
-version 0.2.0
+version 0.2.1
 
 =head1 SYNOPSIS
 

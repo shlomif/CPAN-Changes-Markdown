@@ -1,5 +1,17 @@
 Release history for CPAN-Changes-Markdown
 
+0.2.1 2013-08-30T19:50:44Z
+ [!Minor]
+ - Bump to get new compile test
+
+ [Dependencies::Added / test requires]
+ - IO::Handle
+ - IPC::Open3
+
+ [Dependencies::Removed / test requires]
+ - Capture::Tiny
+ - blib
+
 0.2.0 2013-08-23T15:11:49Z
  [!Major]
  - Now filters headers/change lines optimisitically.

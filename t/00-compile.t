@@ -1,47 +1,53 @@
 use strict;
 use warnings;
 
-# This test was generated via Dist::Zilla::Plugin::Test::Compile 2.018
+# this test was generated with Dist::Zilla::Plugin::Test::Compile 2.023
 
-use Test::More 0.88;
+use Test::More  tests => 15 + ($ENV{AUTHOR_TESTING} ? 1 : 0);
 
 
 
-use Capture::Tiny qw{ capture };
-
-my @module_files = qw(
-CPAN/Changes/Markdown.pm
-CPAN/Changes/Markdown/Filter.pm
-CPAN/Changes/Markdown/Filter/Node/DelimitedText.pm
-CPAN/Changes/Markdown/Filter/Node/PlainText.pm
-CPAN/Changes/Markdown/Filter/NodeUtil.pm
-CPAN/Changes/Markdown/Filter/Passthrough.pm
-CPAN/Changes/Markdown/Filter/Rule/NumericsToCode.pm
-CPAN/Changes/Markdown/Filter/Rule/PackageNamesToCode.pm
-CPAN/Changes/Markdown/Filter/Rule/UnderscoredToCode.pm
-CPAN/Changes/Markdown/Filter/Rule/VersionsToCode.pm
-CPAN/Changes/Markdown/Filter/RuleUtil.pm
-CPAN/Changes/Markdown/Role/Filter.pm
-CPAN/Changes/Markdown/Role/Filter/Node.pm
-CPAN/Changes/Markdown/Role/Filter/Rule.pm
-CPAN/Changes/Markdown/Role/Filter/Rule/PlainText.pm
+my @module_files = (
+    'CPAN/Changes/Markdown.pm',
+    'CPAN/Changes/Markdown/Filter.pm',
+    'CPAN/Changes/Markdown/Filter/Node/DelimitedText.pm',
+    'CPAN/Changes/Markdown/Filter/Node/PlainText.pm',
+    'CPAN/Changes/Markdown/Filter/NodeUtil.pm',
+    'CPAN/Changes/Markdown/Filter/Passthrough.pm',
+    'CPAN/Changes/Markdown/Filter/Rule/NumericsToCode.pm',
+    'CPAN/Changes/Markdown/Filter/Rule/PackageNamesToCode.pm',
+    'CPAN/Changes/Markdown/Filter/Rule/UnderscoredToCode.pm',
+    'CPAN/Changes/Markdown/Filter/Rule/VersionsToCode.pm',
+    'CPAN/Changes/Markdown/Filter/RuleUtil.pm',
+    'CPAN/Changes/Markdown/Role/Filter.pm',
+    'CPAN/Changes/Markdown/Role/Filter/Node.pm',
+    'CPAN/Changes/Markdown/Role/Filter/Rule.pm',
+    'CPAN/Changes/Markdown/Role/Filter/Rule/PlainText.pm'
 );
 
-my @scripts = qw(
 
-);
 
 # no fake home requested
+
+use IPC::Open3;
+use IO::Handle;
 
 my @warnings;
 for my $lib (@module_files)
 {
-    my ($stdout, $stderr, $exit) = capture {
-        system($^X, '-Mblib', '-e', qq{require q[$lib]});
-    };
-    is($?, 0, "$lib loaded ok");
-    warn $stderr if $stderr;
-    push @warnings, $stderr if $stderr;
+    # see L<perlfaq8/How can I capture STDERR from an external command?>
+    my $stdin = '';     # converted to a gensym by open3
+    my $stderr = IO::Handle->new;
+
+    my $pid = open3($stdin, '>&STDERR', $stderr, qq{$^X -Mblib -e"require q[$lib]"});
+    waitpid($pid, 0);
+    is($? >> 8, 0, "$lib loaded ok");
+
+    if (my @_warnings = <$stderr>)
+    {
+        warn @_warnings;
+        push @warnings, @_warnings;
+    }
 }
 
 
@@ -49,5 +55,3 @@ for my $lib (@module_files)
 is(scalar(@warnings), 0, 'no warnings found') if $ENV{AUTHOR_TESTING};
 
 
-
-done_testing;
