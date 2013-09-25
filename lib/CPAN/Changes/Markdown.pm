@@ -6,7 +6,7 @@ BEGIN {
   $CPAN::Changes::Markdown::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $CPAN::Changes::Markdown::VERSION = '0.2.1';
+  $CPAN::Changes::Markdown::VERSION = '0.2.2';
 }
 
 # ABSTRACT: Format your Changes file ( or a section of it ) in Markdown
@@ -127,7 +127,7 @@ CPAN::Changes::Markdown - Format your Changes file ( or a section of it ) in Mar
 
 =head1 VERSION
 
-version 0.2.1
+version 0.2.2
 
 =head1 SYNOPSIS
 

@@ -6,7 +6,7 @@ BEGIN {
   $CPAN::Changes::Markdown::Role::Filter::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $CPAN::Changes::Markdown::Role::Filter::VERSION = '0.2.1';
+  $CPAN::Changes::Markdown::Role::Filter::VERSION = '0.2.2';
 }
 
 # ABSTRACT: A text filter of some kind
@@ -31,7 +31,7 @@ CPAN::Changes::Markdown::Role::Filter - A text filter of some kind
 
 =head1 VERSION
 
-version 0.2.1
+version 0.2.2
 
 =head1 ROLE REQUIRES
 

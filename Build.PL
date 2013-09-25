@@ -17,7 +17,7 @@ my %module_build_args = (
     "Kent Fredric <kentfredric\@gmail.com>"
   ],
   "dist_name" => "CPAN-Changes-Markdown",
-  "dist_version" => "0.2.1",
+  "dist_version" => "0.2.2",
   "license" => "perl",
   "module_name" => "CPAN::Changes::Markdown",
   "recommends" => {},
@@ -34,6 +34,7 @@ my %module_build_args = (
   },
   "script_files" => [],
   "test_requires" => {
+    "File::Spec" => 0,
     "IO::Handle" => 0,
     "IPC::Open3" => 0,
     "Test::More" => "0.98",

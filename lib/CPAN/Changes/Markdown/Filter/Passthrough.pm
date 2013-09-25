@@ -6,7 +6,7 @@ BEGIN {
   $CPAN::Changes::Markdown::Filter::Passthrough::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $CPAN::Changes::Markdown::Filter::Passthrough::VERSION = '0.2.1';
+  $CPAN::Changes::Markdown::Filter::Passthrough::VERSION = '0.2.2';
 }
 
 # ABSTRACT: A Filter drop-in that doesn't process anything.
@@ -38,7 +38,7 @@ CPAN::Changes::Markdown::Filter::Passthrough - A Filter drop-in that doesn't pro
 
 =head1 VERSION
 
-version 0.2.1
+version 0.2.2
 
 =head1 SYNOPSIS
 
