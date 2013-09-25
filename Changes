@@ -1,6 +1,14 @@
 Release history for CPAN-Changes-Markdown
 
 {{$NEXT}}
+ [Bugfix]
+ - Get latest compile test to avoid bugs on Win32
+
+ [Dependencies::Added / test requires]
+ - File::Spec
+
+ [Dependencies::Changed / develop suggests]
+ - Dist::Zilla::PluginBundle::Author::KENTNL v1.8.1 → v1.8.3
 
 0.2.1 2013-08-30T19:50:44Z
  [!Minor]

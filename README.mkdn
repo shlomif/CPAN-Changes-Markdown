@@ -4,7 +4,7 @@ CPAN::Changes::Markdown - Format your Changes file ( or a section of it ) in Mar
 
 # VERSION
 
-version 0.2.1
+version 0.2.2
 
 # SYNOPSIS
 
