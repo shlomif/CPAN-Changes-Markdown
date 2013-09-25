@@ -1,6 +1,8 @@
 Release history for CPAN-Changes-Markdown
 
 {{$NEXT}}
+
+0.2.2 2013-09-25T02:07:11Z
  [Bugfix]
  - Get latest compile test to avoid bugs on Win32
 
