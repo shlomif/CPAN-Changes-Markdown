@@ -1,6 +1,19 @@
 Release history for CPAN-Changes-Markdown
 
 {{$NEXT}}
+ [00 Major]
+ - Plumbing changes that may be relevant to non-cpan downstreams.
+
+ [01 EUMM]
+ - Tooling switched to EUMM
+ - Tooling dependencies are softened
+
+ [02 Version Scheme]
+ - Versions moved to floating instead of dotted-decimal.
+ - This is the primary reason for the 1.x on the box.
+
+ [Bugfix]
+ - Documentation fix for "GitHub". Thanks Shlomi Fish.
 
 0.2.2 2013-09-25T02:07:11Z
  [Bugfix]
