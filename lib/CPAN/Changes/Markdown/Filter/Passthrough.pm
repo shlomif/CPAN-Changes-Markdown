@@ -5,6 +5,8 @@ package CPAN::Changes::Markdown::Filter::Passthrough;
 
 # ABSTRACT: A Filter drop-in that doesn't process anything.
 
+# AUTHORITY
+
 =head1 SYNOPSIS
 
     my $filter = CPAN::Changes::Markdown::Filter::Passthrough->new();

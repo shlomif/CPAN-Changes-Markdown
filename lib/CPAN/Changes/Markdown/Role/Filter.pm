@@ -5,6 +5,8 @@ package CPAN::Changes::Markdown::Role::Filter;
 
 # ABSTRACT: A text filter of some kind
 
+# AUTHORITY
+
 =begin MetaPOD::JSON v1.1.0
 
 {

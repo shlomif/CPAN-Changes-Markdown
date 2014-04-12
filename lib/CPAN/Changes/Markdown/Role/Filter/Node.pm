@@ -5,6 +5,8 @@ package CPAN::Changes::Markdown::Role::Filter::Node;
 
 # ABSTRACT: A parse node of some kind
 
+# AUTHORITY
+
 use Role::Tiny;
 
 =requires C<to_s>

@@ -5,6 +5,8 @@ package CPAN::Changes::Markdown::Role::Filter::Rule;
 
 # ABSTRACT: A step filter
 
+# AUTHORITY
+
 use Role::Tiny;
 
 =requires C<filter>

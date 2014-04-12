@@ -6,6 +6,8 @@ package CPAN::Changes::Markdown::Filter::Node::DelimitedText;
 
 # ABSTRACT: A region of text that is marked up
 
+# AUTHORITY
+
 =head1 SYNOPSIS
 
     use CPAN::Changes::Markdown::Filter::NodeUtil qw( :all );

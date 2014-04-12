@@ -6,6 +6,8 @@ package CPAN::Changes::Markdown::Filter::NodeUtil;
 
 # ABSTRACT: short-hand node construction functions
 
+# AUTHORITY
+
 =head1 SYNOPSIS
 
     use CPAN::Changes::Markdown::Filter::NodeUtil;

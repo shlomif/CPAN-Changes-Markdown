@@ -5,6 +5,8 @@ package CPAN::Changes::Markdown::Filter::Rule::VersionsToCode;
 
 # ABSTRACT: Quote things that look like numbers as code entries.
 
+# AUTHORITY
+
 use Moo;
 use CPAN::Changes::Markdown::Filter::NodeUtil qw( mk_node_plaintext mk_node_delimitedtext );
 

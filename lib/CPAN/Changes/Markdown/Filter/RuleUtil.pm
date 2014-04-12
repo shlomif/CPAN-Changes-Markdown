@@ -6,6 +6,8 @@ package CPAN::Changes::Markdown::Filter::RuleUtil;
 
 # ABSTRACT: short-hand for constructing rule objects.
 
+# AUTHORITY
+
 =head1 SYNOPSIS
 
     use CPAN::Changes::Markdown::Filter::RuleUtil qw(:all);

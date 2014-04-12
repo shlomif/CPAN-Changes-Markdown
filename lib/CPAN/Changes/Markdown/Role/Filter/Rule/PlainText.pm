@@ -5,6 +5,8 @@ package CPAN::Changes::Markdown::Role::Filter::Rule::PlainText;
 
 # ABSTRACT: A rule that only filters C<plaintext> nodes.
 
+# AUTHORITY
+
 =head1 SYNOPSIS
 
     package Example::Rule;

@@ -6,6 +6,8 @@ package CPAN::Changes::Markdown::Filter::Node::PlainText;
 
 # ABSTRACT: A text node that contains markup-free text.
 
+# AUTHORITY
+
 =head1 SYNOPSIS
 
     use CPAN::Changes::Markdown::Filter::NodeUtil qw( :all );
