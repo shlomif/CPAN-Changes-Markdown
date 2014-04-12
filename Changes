@@ -1,0 +1,47 @@
+Release history for CPAN-Changes-Markdown
+
+0.2.3 2014-04-12T09:26:15Z
+
+0.2.2 2013-09-25T02:07:11Z
+ [Bugfix]
+ - Get latest compile test to avoid bugs on Win32
+
+ [Dependencies::Added / test requires]
+ - File::Spec
+
+ [Dependencies::Changed / develop suggests]
+ - Dist::Zilla::PluginBundle::Author::KENTNL v1.8.1 → v1.8.3
+
+0.2.1 2013-08-30T19:50:44Z
+ [!Minor]
+ - Bump to get new compile test
+
+ [Dependencies::Added / test requires]
+ - IO::Handle
+ - IPC::Open3
+
+ [Dependencies::Removed / test requires]
+ - Capture::Tiny
+ - blib
+
+0.2.0 2013-08-23T15:11:49Z
+ [!Major]
+ - Now filters headers/change lines optimisitically.
+
+ [Dependencies::Added / develop requires]
+ - Test::Kwalitee 1.08
+
+ [Dependencies::Added / runtime requires]
+ - Path::Tiny
+ - Role::Tiny
+ - Sub::Exporter::Progressive
+
+ [Dependencies::Added / test requires]
+ - utf8
+
+ [Dependencies::Changed / develop suggests]
+ - Dist::Zilla::PluginBundle::Author::KENTNL v1.8.0 → v1.8.1
+
+0.1.0 2013-08-09T23:57:02Z
+ - First version.
+
