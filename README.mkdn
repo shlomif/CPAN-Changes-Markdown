@@ -4,7 +4,7 @@ CPAN::Changes::Markdown - Format your Changes file ( or a section of it ) in Mar
 
 # VERSION
 
-version 0.2.2
+version 0.2.3
 
 # SYNOPSIS
 
@@ -54,21 +54,13 @@ A CPAN::Changes::Markdown::Filter object that can process a header.
 
 A CPAN::Changes::Markdown::Filter object that can process a header.
 
-{
-    "namespace":"CPAN::Changes::Markdown",
-    "interface":"class",
-    "inherits":"Moo::Object"
-}
-
-
-
 # AUTHOR
 
 Kent Fredric <kentfredric@gmail.com>
 
 # COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2013 by Kent Fredric <kentfredric@gmail.com>.
+This software is copyright (c) 2014 by Kent Fredric <kentfredric@gmail.com>.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
