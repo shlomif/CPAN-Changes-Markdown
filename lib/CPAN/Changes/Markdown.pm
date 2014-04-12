@@ -199,9 +199,9 @@ version 0.2.3
 
 Mostly, this is wrapper around CPAN::Changes that just formats the output differently.
 
-Primary use case for me is writing C<Github> release notes.
+Primary use case for me is writing C<GitHub> release notes.
 
-I plan to eventually have hook filters and stuff to highlight various tokens in a C<Github> friendly way.
+I plan to eventually have hook filters and stuff to highlight various tokens in a C<GitHub> friendly way.
 
 =head1 METHODS
 
