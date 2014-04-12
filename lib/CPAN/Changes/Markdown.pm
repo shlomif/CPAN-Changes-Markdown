@@ -1,5 +1,7 @@
+use 5.008;    # utf8
 use strict;
 use warnings;
+use utf8;
 
 package CPAN::Changes::Markdown;
 
@@ -7,8 +9,12 @@ package CPAN::Changes::Markdown;
 
 # AUTHORITY
 
-use Moo 1.000008;
-use CPAN::Changes::Markdown::Filter::RuleUtil qw(:all);
+use Moo 1.000008 qw( has );
+use CPAN::Changes::Markdown::Filter::RuleUtil qw(
+  rule_VersionsToCode
+  rule_UnderscoredToCode
+  rule_PackageNamesToCode
+);
 
 =begin MetaPOD::JSON v1.1.0
 
@@ -70,9 +76,9 @@ has header_filter => (
   },
 );
 
-=attr C<header_filter>
+=attr C<line_filter>
 
-A CPAN::Changes::Markdown::Filter object that can process a header.
+A CPAN::Changes::Markdown::Filter object that can process a line.
 
 =cut
 
