@@ -35,7 +35,7 @@ use Sub::Exporter::Progressive -setup =>
 
 =cut
 
-## no critic ( RequireArgUnpacking Capitalization )
+## no critic ( RequireArgUnpacking Capitalization NamingConventions::ProhibitMixedCaseSub )
 
 sub rule_NumericsToCode {
   require CPAN::Changes::Markdown::Filter::Rule::NumericsToCode;
