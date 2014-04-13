@@ -1,12 +1,17 @@
 #!perl
 
+## no critic
 eval 'exec echo Please execute this code with perl'    # Guard
   if 0;
+## use critic
 
 use 5.008;                                             # utf8;
 use strict;
 use warnings;
 use utf8;
+
+## no critic (NamingConventions::Capitalization)
+package main;
 
 # PODNAME: cpan-changes-markdown
 
@@ -14,10 +19,12 @@ use utf8;
 
 # AUTHORITY
 
+use Carp qw(croak);
+
 my ($filename) = @ARGV;
 
 if ( not $filename ) {
-  die "$0 Changes > Changes.mkdn";
+  croak "$0 Changes > Changes.mkdn";
 }
 
 =head1 SYNOPSIS
@@ -29,7 +36,7 @@ if ( not $filename ) {
 use CPAN::Changes::Markdown;
 my $changes = CPAN::Changes::Markdown->load_utf8( $filename );
 binmode *STDOUT, ':encoding(UTF-8)';
-print $changes->serialize or die "Can't write to STDOUT";
+print $changes->serialize or croak q[Can't write to STDOUT];
 
 exit 0;
 
