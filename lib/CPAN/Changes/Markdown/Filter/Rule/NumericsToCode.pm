@@ -9,7 +9,7 @@ package CPAN::Changes::Markdown::Filter::Rule::NumericsToCode;
 
 # AUTHORITY
 
-use Moo;
+use Moo qw( with has );
 use CPAN::Changes::Markdown::Filter::NodeUtil qw( mk_node_plaintext mk_node_delimitedtext );
 
 =begin MetaPOD::JSON v1.1.0

@@ -24,7 +24,7 @@ package CPAN::Changes::Markdown::Role::Filter::Rule::PlainText;
 
 =cut
 
-use Role::Tiny;
+use Role::Tiny qw( requires with );
 
 =requires C<filter_plaintext>
 

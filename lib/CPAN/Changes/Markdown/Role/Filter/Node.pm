@@ -9,7 +9,7 @@ package CPAN::Changes::Markdown::Role::Filter::Node;
 
 # AUTHORITY
 
-use Role::Tiny;
+use Role::Tiny qw( requires );
 
 =requires C<to_s>
 

@@ -30,7 +30,7 @@ package CPAN::Changes::Markdown::Filter::Passthrough;
 
 =cut
 
-use Moo;
+use Moo qw( with );
 
 with 'CPAN::Changes::Markdown::Role::Filter';
 

@@ -31,7 +31,7 @@ package CPAN::Changes::Markdown::Filter::Node::PlainText;
 
 =cut
 
-use Moo;
+use Moo qw( with has );
 
 with 'CPAN::Changes::Markdown::Role::Filter::Node';
 

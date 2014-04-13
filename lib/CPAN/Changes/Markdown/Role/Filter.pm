@@ -9,6 +9,10 @@ package CPAN::Changes::Markdown::Role::Filter;
 
 # AUTHORITY
 
+
+
+use Role::Tiny qw( requires );
+
 =begin MetaPOD::JSON v1.1.0
 
 {
@@ -20,8 +24,6 @@ package CPAN::Changes::Markdown::Role::Filter;
 =end MetaPOD::JSON
 
 =cut
-
-use Role::Tiny;
 
 =requires C<process>
 
