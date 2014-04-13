@@ -18,7 +18,6 @@ use Role::Tiny qw( requires );
 {
     "namespace":"CPAN::Changes::Markdown::Role::Filter",
     "interface":"role"
-
 }
 
 =end MetaPOD::JSON

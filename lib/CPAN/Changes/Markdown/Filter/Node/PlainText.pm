@@ -27,7 +27,6 @@ package CPAN::Changes::Markdown::Filter::Node::PlainText;
     "does":"CPAN::Changes::Markdown::Role::Filter::Node",
     "interface":"class",
     "inherits":"Moo::Object"
-
 }
 
 =end MetaPOD::JSON

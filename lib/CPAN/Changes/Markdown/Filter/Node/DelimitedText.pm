@@ -28,7 +28,6 @@ package CPAN::Changes::Markdown::Filter::Node::DelimitedText;
     "does":"CPAN::Changes::Markdown::Role::Filter::Node",
     "interface":"class",
     "inherits":"Moo::Object"
-
 }
 
 =end MetaPOD::JSON
