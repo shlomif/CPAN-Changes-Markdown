@@ -37,9 +37,12 @@ This filter translates things with _ as part of their token to code spans.
 
 with 'CPAN::Changes::Markdown::Role::Filter::Rule::PlainText';
 
+# _Pulp__5010_qr_m_propagate_properly
+## no critic (Compatibility::PerlMinimumVersionAndWhy)
 my $re_prefix = qr/(\A|\A.*?\s) ( _+ [^_\s]+         (?: _+ [^_\s]+ )*   ) (\z|\s.*\z)/msx;
 my $re_suffix = qr/(\A|\A.*?\s) ( [^_\s]+ _+         (?: [^_\s]+ _+ )*   ) (\z|\s.*\z)/msx;
 my $re_infix  = qr/(\A|\A.*?\s) ( [^_\s]+ _+ [^_\s]+ (?: _+ [^_\s]+ )*   ) (\z|\s.*\z)/msx;
+## use critic
 
 sub _inject_code_delim {
   my ( $self, $out, $before, $code, $after ) = @_;

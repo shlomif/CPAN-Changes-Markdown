@@ -43,8 +43,11 @@ sub _inject_code_delim {
   return @{$out};
 }
 
+# _Pulp__5010_qr_m_propagate_properly
+## no critic (Compatibility::PerlMinimumVersionAndWhy)
 my $re_contains_number = qr/         \d                  /msx;
 my $re_numeric         = qr/ (\A|\A.*?\s) ( [\d._]+ ) (\z|\s.*\z)/msx;
+## use critic
 
 =method C<filter_plaintext>
 
