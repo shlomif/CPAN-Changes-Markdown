@@ -1,0 +1,35 @@
+#!perl
+
+eval 'exec echo Please execute this code with perl'    # Guard
+  if 0;
+
+use 5.008;                                             # utf8;
+use strict;
+use warnings;
+use utf8;
+
+# PODNAME: cpan-changes-markdown
+
+# ABSTRACT: A simple incarnation of CPAN::Changes to Markdown
+
+# AUTHORITY
+
+my ($filename) = @ARGV;
+
+if ( not $filename ) {
+  die "$0 Changes > Changes.mkdn";
+}
+
+=head1 SYNOPSIS
+
+  cpan-changes-markdown Changes > Changes.mkdn
+
+=cut
+
+use CPAN::Changes::Markdown;
+my $changes = CPAN::Changes::Markdown->load_utf8( $filename );
+binmode *STDOUT, ':encoding(UTF-8)';
+print $changes->serialize or die "Can't write to STDOUT";
+
+exit 0;
+

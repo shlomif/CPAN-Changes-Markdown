@@ -9,8 +9,6 @@ package CPAN::Changes::Markdown::Role::Filter;
 
 # AUTHORITY
 
-
-
 use Role::Tiny qw( requires );
 
 =begin MetaPOD::JSON v1.1.0
