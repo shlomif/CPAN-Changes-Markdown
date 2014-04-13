@@ -43,7 +43,7 @@ with 'CPAN::Changes::Markdown::Role::Filter::Node';
 
 =cut
 
-has content => ( is => ro =>, required => 1 );
+has content => ( is => ro =>, required => 1, );
 
 =attr C<before_text>
 
@@ -51,7 +51,7 @@ has content => ( is => ro =>, required => 1 );
 
 =cut
 
-has before_text => ( is => ro =>, required => 1 );
+has before_text => ( is => ro =>, required => 1, );
 
 =attr C<after_text>
 
@@ -59,7 +59,7 @@ has before_text => ( is => ro =>, required => 1 );
 
 =cut
 
-has after_text => ( is => ro =>, required => 1 );
+has after_text => ( is => ro =>, required => 1, );
 
 =method C<create>
 
@@ -78,7 +78,7 @@ sub create {
   return $self->new(
     content     => $content,
     before_text => $before,
-    after_text  => $after
+    after_text  => $after,
   );
 }
 
