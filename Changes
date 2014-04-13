@@ -19,6 +19,10 @@ Release history for CPAN-Changes-Markdown
  [Bugfix]
  - Documentation fix for "GitHub". Thanks Shlomi Fish.
 
+ [Dependencies::Aggregate]
+ - 5.010 : 35
+ - 5.019 : 18
+
  [Dependencies::Stats]
  - Dependencies changed since 0.2.2, see Changes.deps{,.all,.dev} for
    details
