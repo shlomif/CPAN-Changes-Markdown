@@ -50,9 +50,9 @@ Same as `load` except opens `file` in `utf8` mode.
 
 A CPAN::Changes::Markdown::Filter object that can process a header.
 
-## `header_filter`
+## `line_filter`
 
-A CPAN::Changes::Markdown::Filter object that can process a header.
+A CPAN::Changes::Markdown::Filter object that can process a line.
 
 # AUTHOR
 
