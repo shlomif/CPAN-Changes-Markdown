@@ -27,6 +27,8 @@ use Role::Tiny qw( requires );
 
 =requires C<process>
 
+  my $processed_text = $self->process( $text );
+
 =cut
 
 requires 'process';

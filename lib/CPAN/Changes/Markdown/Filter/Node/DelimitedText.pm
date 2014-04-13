@@ -15,6 +15,10 @@ package CPAN::Changes::Markdown::Filter::Node::DelimitedText;
 
     my $delimitedtext = mk_node_delimitedtext(q[`], "The text here", q[`]);
 
+    print $delimitedtext->to_s() # `The text here`
+
+    print $delimitedtext->content # The text here
+
 =cut
 
 =begin MetaPOD::JSON v1.1.0
@@ -36,7 +40,7 @@ with 'CPAN::Changes::Markdown::Role::Filter::Node';
 
 =attr C<content>
 
-=method C<content>
+  required
 
 =cut
 
@@ -44,7 +48,7 @@ has content => ( is => ro =>, required => 1 );
 
 =attr C<before_text>
 
-=method C<before_text>
+  required
 
 =cut
 
@@ -52,7 +56,7 @@ has before_text => ( is => ro =>, required => 1 );
 
 =attr C<after_text>
 
-=method C<after_text>
+  required
 
 =cut
 

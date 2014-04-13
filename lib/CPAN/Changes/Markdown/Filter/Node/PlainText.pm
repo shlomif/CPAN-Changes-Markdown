@@ -15,6 +15,9 @@ package CPAN::Changes::Markdown::Filter::Node::PlainText;
 
     my $plaintext = mk_node_plaintext("The text here");
 
+    $plaintext->to_s()    # The text here
+    $plaintext->content() # The text here
+
 =cut
 
 =begin MetaPOD::JSON v1.1.0
@@ -37,7 +40,7 @@ with 'CPAN::Changes::Markdown::Role::Filter::Node';
 
 =attr C<content>
 
-=method C<content>
+  rw, required
 
 =cut
 

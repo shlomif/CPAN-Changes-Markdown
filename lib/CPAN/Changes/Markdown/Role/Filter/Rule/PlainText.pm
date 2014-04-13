@@ -5,7 +5,7 @@ use utf8;
 
 package CPAN::Changes::Markdown::Role::Filter::Rule::PlainText;
 
-# ABSTRACT: A rule that only filters C<plaintext> nodes.
+# ABSTRACT: A rule that only filters 'plaintext' nodes.
 
 # AUTHORITY
 
