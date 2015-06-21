@@ -7,6 +7,8 @@ package CPAN::Changes::Markdown::Filter::Rule::UnderscoredToCode;
 
 # ABSTRACT: Quote things containing an underscore as Code
 
+our $VERSION = '1.000001';
+
 # AUTHORITY
 
 use Moo qw( with );

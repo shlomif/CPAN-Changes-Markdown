@@ -7,6 +7,8 @@ package CPAN::Changes::Markdown::Role::Filter::Rule;
 
 # ABSTRACT: A step filter
 
+our $VERSION = '1.000001';
+
 # AUTHORITY
 
 use Role::Tiny qw( requires );

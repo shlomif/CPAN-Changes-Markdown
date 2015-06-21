@@ -7,6 +7,8 @@ package CPAN::Changes::Markdown::Filter::NodeUtil;
 
 # ABSTRACT: short-hand node construction functions
 
+our $VERSION = '1.000001';
+
 # AUTHORITY
 
 =head1 SYNOPSIS
