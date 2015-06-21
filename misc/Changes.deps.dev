@@ -1,8 +1,15 @@
 This file contains changes to DEVELOPMENT dependencies only ( both REQUIRED and OPTIONAL )
 
 1.000001
+ [Added / develop recommends]
+ - Test::More 1.001014
+
+ [Added / develop requires]
+ - Test::EOL
+ - Test::More 0.88
+
  [Changed / develop requires]
- - Dist::Zilla::PluginBundle::Author::KENTNL 2.013003 → 2.013002
+ - Test::Kwalitee 1.12 → 1.21
 
 1.000000 2014-04-13T02:01:38Z
  [Added / develop requires]
