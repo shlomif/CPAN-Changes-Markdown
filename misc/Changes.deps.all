@@ -1,4 +1,16 @@
-1.000000
+This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL dependencies for all phases (configure/build/runtime/test/develop)
+
+1.000001
+ [Changed / develop requires]
+ - Dist::Zilla::PluginBundle::Author::KENTNL 2.013003 → 2.013002
+
+1.000000 2014-04-13T02:01:38Z
+ [Added / configure recommends]
+ - ExtUtils::MakeMaker 6.96
+
+ [Added / configure requires]
+ - ExtUtils::MakeMaker 6.30
+
  [Added / develop requires]
  - Dist::Zilla::Plugin::Authority 1.006
  - Dist::Zilla::Plugin::AutoPrereqs
@@ -41,13 +53,41 @@
  - Dist::Zilla::Plugin::TestRelease
  - Dist::Zilla::Plugin::Twitter
  - Dist::Zilla::Plugin::UploadToCPAN
- - Dist::Zilla::PluginBundle::Author::KENTNL 2.013002
+ - Dist::Zilla::PluginBundle::Author::KENTNL 2.013003
 
  [Added / develop suggests]
  - Dist::Zilla::PluginBundle::Author::KENTNL::Lite v1.3.0
 
+ [Added / runtime requires]
+ - Carp
+ - utf8
+
+ [Added / test recommends]
+ - CPAN::Meta
+ - CPAN::Meta::Requirements 2.120900
+ - ExtUtils::MakeMaker 6.96
+ - Test::More 1.001003
+
+ [Added / test requires]
+ - ExtUtils::MakeMaker
+ - File::Spec::Functions
+ - List::Util
+ - version
+
  [Changed / develop requires]
  - Test::Kwalitee 1.08 → 1.12
+
+ [Changed / runtime requires]
+ - perl v5.10.0 → 5.008
+
+ [Changed / test requires]
+ - Test::More 0.98 → 0.89
+
+ [Removed / build requires]
+ - Module::Build 0.4007
+
+ [Removed / configure requires]
+ - Module::Build 0.4007
 
  [Removed / develop recommends]
  - Dist::Zilla::PluginBundle::Author::KENTNL::Lite v1.3.0
@@ -59,16 +99,39 @@
  [Removed / develop suggests]
  - Dist::Zilla::PluginBundle::Author::KENTNL v1.8.3
 
+ [Removed / test requires]
+ - File::Spec
+ - IO::Handle
+ - IPC::Open3
+ - utf8
+
 0.2.2 2013-09-25T02:07:11Z
+ [Added / test requires]
+ - File::Spec
+
  [Changed / develop suggests]
  - Dist::Zilla::PluginBundle::Author::KENTNL v1.8.1 → v1.8.3
 
 0.2.1 2013-08-30T19:50:44Z
+ [Added / test requires]
+ - IO::Handle
+ - IPC::Open3
+
+ [Removed / test requires]
+ - Capture::Tiny
+ - blib
 
 0.2.0 2013-08-23T15:11:49Z
  [Added / develop requires]
  - Test::Kwalitee 1.08
 
+ [Added / runtime requires]
+ - Path::Tiny
+ - Role::Tiny
+ - Sub::Exporter::Progressive
+
+ [Added / test requires]
+ - utf8
+
  [Changed / develop suggests]
  - Dist::Zilla::PluginBundle::Author::KENTNL v1.8.0 → v1.8.1
-
