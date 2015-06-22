@@ -1,6 +1,5 @@
 
 use strict;
-use utf8;
 use warnings;
 
 use Test::More;
@@ -32,11 +31,12 @@ is(
   "`something_underscored` `v1.0.0`",
   '+underscore multipart decimals with v-prefix highlight'
 );
-is(
-  $filter->process("Dist::Zilla::PluginBundle::Author::KENTNL v1.0.0 → v1.3.0"),
-  "Dist::Zilla::PluginBundle::Author::KENTNL `v1.0.0` → `v1.3.0`",
-  "Unicode containing string works"
-);
+use charnames qw( :full );
+my ( $source, $target );
+$source = "Dist::Zilla::PluginBundle::Author::KENTNL v1.0.0\N{NO-BREAK SPACE}\N{RIGHTWARDS ARROW}\N{NO-BREAK SPACE}v1.3.0";
+$target = "Dist::Zilla::PluginBundle::Author::KENTNL `v1.0.0`\N{NO-BREAK SPACE}\N{RIGHTWARDS ARROW}\N{NO-BREAK SPACE}`v1.3.0`";
+
+is( $filter->process($source), $target, "Unicode containing string works" );
 
 done_testing;
 

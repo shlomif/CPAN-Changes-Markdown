@@ -5,10 +5,9 @@ eval 'exec echo Please execute this code with perl'    # Guard
   if 0;
 ## use critic
 
-use 5.008;                                             # utf8;
+use 5.006;                                             # our
 use strict;
 use warnings;
-use utf8;
 
 ## no critic (NamingConventions::Capitalization)
 package main;
@@ -36,9 +35,11 @@ if ( not $filename ) {
 =cut
 
 use CPAN::Changes::Markdown;
-my $changes = CPAN::Changes::Markdown->load_utf8( $filename );
-binmode *STDOUT, ':encoding(UTF-8)';
-print $changes->serialize or croak q[Can't write to STDOUT];
+my $changes = CPAN::Changes::Markdown->load_utf8($filename);
+my $output = $changes->serialize;
+utf8::encode($output);
+print $output or croak q[Can't write to STDOUT];
 
 exit 0;
 
+__END__

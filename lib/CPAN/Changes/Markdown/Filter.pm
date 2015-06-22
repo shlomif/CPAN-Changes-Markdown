@@ -1,7 +1,6 @@
-use 5.008;    # utf8
+use 5.006;    # our
 use strict;
 use warnings;
-use utf8;
 
 package CPAN::Changes::Markdown::Filter;
 
@@ -10,7 +9,6 @@ package CPAN::Changes::Markdown::Filter;
 our $VERSION = '1.000001';
 
 # AUTHORITY
-
 
 =head1 SYNOPSIS
 
