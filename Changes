@@ -1,12 +1,20 @@
 Release history for CPAN-Changes-Markdown
 
 {{$NEXT}}
+ [00 Minor]
+ - A trivial release to reduce cruft and restore order to the repository.
+ - Code had somehow bitrotted and I'd lost part of the commits that didn't replicate.
+
  [Dependencies::Stats]
  - Dependencies changed since 1.000000, see misc/*.deps* for details
  - configure: +1 ↓1 (recommends: ↑1)
- - develop: +14 ↑3 -6 (recommends: +1, suggests: +2 -1)
+ - develop: +15 ↑3 -6 (recommends: +1, suggests: +2 -1)
  - runtime: (recommends: +1)
  - test: +2 -3 (recommends: ↑2 ↓1 -1)
+
+ [Metadata]
+ - Change author ID data
+ - migrate to KENTNL
 
 1.000000 2014-04-13T02:01:38Z
  [00 Major]
