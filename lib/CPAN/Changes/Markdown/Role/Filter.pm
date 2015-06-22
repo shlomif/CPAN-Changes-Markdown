@@ -6,7 +6,7 @@ package CPAN::Changes::Markdown::Role::Filter;
 
 # ABSTRACT: A text filter of some kind
 
-our $VERSION = '1.000001';
+our $VERSION = '1.000002';
 
 # AUTHORITY
 

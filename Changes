@@ -1,6 +1,8 @@
 Release history for CPAN-Changes-Markdown
 
 {{$NEXT}}
+
+1.000001 2015-06-22T01:13:07Z 9cee3a7
  [00 Minor]
  - A trivial release to reduce cruft and restore order to the repository.
  - Code had somehow bitrotted and I'd lost part of the commits that didn't replicate.

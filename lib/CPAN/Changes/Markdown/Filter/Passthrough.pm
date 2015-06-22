@@ -6,7 +6,7 @@ package CPAN::Changes::Markdown::Filter::Passthrough;
 
 # ABSTRACT: A Filter drop-in that doesn't process anything.
 
-our $VERSION = '1.000001';
+our $VERSION = '1.000002';
 
 # AUTHORITY
 

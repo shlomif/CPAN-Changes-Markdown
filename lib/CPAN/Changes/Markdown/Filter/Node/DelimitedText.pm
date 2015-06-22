@@ -6,7 +6,7 @@ package CPAN::Changes::Markdown::Filter::Node::DelimitedText;
 
 # ABSTRACT: A region of text that is marked up
 
-our $VERSION = '1.000001';
+our $VERSION = '1.000002';
 
 # AUTHORITY
 
