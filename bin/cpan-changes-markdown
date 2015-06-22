@@ -16,7 +16,7 @@ package main;
 
 # ABSTRACT: A simple incarnation of CPAN::Changes to Markdown
 
-our $VERSION = '1.000001';
+our $VERSION = '1.000002';
 
 # AUTHORITY
 
