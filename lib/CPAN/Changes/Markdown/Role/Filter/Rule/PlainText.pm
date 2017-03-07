@@ -6,7 +6,7 @@ package CPAN::Changes::Markdown::Role::Filter::Rule::PlainText;
 
 # ABSTRACT: A rule that only filters 'plaintext' nodes.
 
-our $VERSION = '1.000002';
+our $VERSION = '1.000003';
 
 # AUTHORITY
 

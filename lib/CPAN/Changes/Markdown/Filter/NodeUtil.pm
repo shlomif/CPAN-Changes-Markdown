@@ -6,7 +6,7 @@ package CPAN::Changes::Markdown::Filter::NodeUtil;
 
 # ABSTRACT: short-hand node construction functions
 
-our $VERSION = '1.000002';
+our $VERSION = '1.000003';
 
 # AUTHORITY
 

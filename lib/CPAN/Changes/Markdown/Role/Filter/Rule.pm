@@ -6,7 +6,7 @@ package CPAN::Changes::Markdown::Role::Filter::Rule;
 
 # ABSTRACT: A step filter
 
-our $VERSION = '1.000002';
+our $VERSION = '1.000003';
 
 # AUTHORITY
 

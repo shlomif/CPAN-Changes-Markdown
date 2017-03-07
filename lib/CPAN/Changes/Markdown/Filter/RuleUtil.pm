@@ -6,7 +6,7 @@ package CPAN::Changes::Markdown::Filter::RuleUtil;
 
 # ABSTRACT: short-hand for constructing rule objects.
 
-our $VERSION = '1.000002';
+our $VERSION = '1.000003';
 
 # AUTHORITY
 

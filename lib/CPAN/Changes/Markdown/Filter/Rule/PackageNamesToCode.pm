@@ -6,7 +6,7 @@ package CPAN::Changes::Markdown::Filter::Rule::PackageNamesToCode;
 
 # ABSTRACT: Quote things that look like Perl Package names to Code
 
-our $VERSION = '1.000002';
+our $VERSION = '1.000003';
 
 # AUTHORITY
 
