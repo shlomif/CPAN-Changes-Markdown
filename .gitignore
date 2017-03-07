@@ -1,2 +1,3 @@
-.build
-CPAN-Changes-Markdown-*
+/.build
+/CPAN-Changes-Markdown-*
+/tmp/
