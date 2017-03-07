@@ -2,6 +2,7 @@ Release history for CPAN-Changes-Markdown
 
 {{$NEXT}}
  - Bugfix: Avoid test failures with -Ddefault_inc_excludes_dot
+ - Tests made compatible with older Test::More
 
  [Dependencies::Stats]
  - Dependencies changed since 1.000001, see misc/*.deps* for details

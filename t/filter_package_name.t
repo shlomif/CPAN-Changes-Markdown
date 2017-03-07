@@ -1,7 +1,7 @@
 use strict;
 use warnings;
 
-use Test::More;
+use Test::More tests => 15;
 
 use CPAN::Changes::Markdown::Filter;
 use CPAN::Changes::Markdown::Filter::RuleUtil qw( :all );
@@ -35,6 +35,3 @@ is(
   "hell `quux::doo::asfd::` world\n",
   "Extended suffix == extended highlighting"
 );
-
-done_testing;
-

@@ -1,7 +1,7 @@
 use strict;
 use warnings;
 
-use Test::More;
+use Test::More tests => 5;
 
 use CPAN::Changes::Markdown::Filter;
 use CPAN::Changes::Markdown::Filter::RuleUtil qw( :all );
@@ -13,6 +13,3 @@ is( $filter->process("hell 1.0 world\n"),   "hell `1.0` world\n",   "simple numb
 is( $filter->process("hell 1.0_ world\n"),  "hell `1.0_` world\n",  "simple numbers include underscores as versions" );
 is( $filter->process("hell v1.0_ world\n"), "hell `v1.0_` world\n", "v is extracted as part of the version" );
 is( $filter->process("hell v1.0_-TRIAL world\n"), "hell `v1.0_-TRIAL` world\n", "-TRIAL is extracted as part of the version" );
-
-done_testing;
-

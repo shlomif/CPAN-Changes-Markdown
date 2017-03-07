@@ -1,7 +1,7 @@
 use strict;
 use warnings;
 
-use Test::More;
+use Test::More tests => 6;
 
 use CPAN::Changes::Markdown::Filter;
 use CPAN::Changes::Markdown::Filter::RuleUtil qw( :all );
@@ -14,6 +14,3 @@ is( $filter->process("hell 1.0_ world\n"),      "hell `1.0_` world\n",    "numer
 is( $filter->process("hell1.0_ world\n"),       "hell1.0_ world\n",       "hugging text == not a number" );
 is( $filter->process("hell v1.0 world\n"),      "hell v1.0 world\n",      "hugging text(v) == not a number" );
 is( $filter->process("hell 1.0-TRIAL world\n"), "hell 1.0-TRIAL world\n", "hugging text(-TRIAL) == not a number" );
-
-done_testing;
-

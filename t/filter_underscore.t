@@ -1,7 +1,7 @@
 use strict;
 use warnings;
 
-use Test::More;
+use Test::More tests => 8;
 
 use CPAN::Changes::Markdown::Filter;
 use CPAN::Changes::Markdown::Filter::RuleUtil qw( :all );
@@ -18,6 +18,3 @@ is( $filter->process("hell _quux_doo_asfd world\n"), "hell `_quux_doo_asfd` worl
   "Extended prefix == extended highlighting" );
 is( $filter->process("hell quux_doo_asfd_ world\n"), "hell `quux_doo_asfd_` world\n",
   "Extended suffix == extended highlighting" );
-
-done_testing;
-

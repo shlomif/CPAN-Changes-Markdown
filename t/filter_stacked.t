@@ -2,7 +2,7 @@
 use strict;
 use warnings;
 
-use Test::More;
+use Test::More tests => 10;
 
 use CPAN::Changes::Markdown::Filter;
 use CPAN::Changes::Markdown::Filter::RuleUtil qw( :all );
@@ -37,6 +37,3 @@ $source = "Dist::Zilla::PluginBundle::Author::KENTNL v1.0.0\N{NO-BREAK SPACE}\N{
 $target = "Dist::Zilla::PluginBundle::Author::KENTNL `v1.0.0`\N{NO-BREAK SPACE}\N{RIGHTWARDS ARROW}\N{NO-BREAK SPACE}`v1.3.0`";
 
 is( $filter->process($source), $target, "Unicode containing string works" );
-
-done_testing;
-
